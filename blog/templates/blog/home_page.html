@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
- <title>Welcome to Sage's Blog</title>
+ <title>Welcome to Sam's Blog</title>
 </head>
 <body>
  <!-- Site Header -->
- <h1>Hi. I am Sage. Welcome to my blog!</h1>
+ <h1>Hi. I am Sam. Welcome to my blog!</h1>
 
 <!-- Blog Post -->
  <h2>My First Blog Post</h2>
- <p>Here is my first blog post. One day at the mall.
-...</p>
+ <p>Here is my first blog post. One day at the mall......Mr. Kalu showed me an awesome Django app like this! HAHAHA!</p>
 
-
+<!-- Like And Comment -->
+<img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=91547669,1942809298&fm=27&gp=0.jpg" height=100px></img><br>
+ <button>Like</button>
+ <h2>Leave a Comment</h2>
+ <form  action="{% url 'blog:home_page' %}" method="POST">
+ 	{% csrf_token %}
+ 	<textarea placeholder="Please Enter Your Comment" name="comment"></textarea><br>
+ 	<input type="text" placeholder="username" name="username"> <br><br>
+	<input type="submit" value="Post Me!">
+ </form>
+<br>
+<p>comment</p>	
+username {{username}} says: {{comment}}
 </body>
 </html>
