@@ -22,7 +22,12 @@
 	<input type="submit" value="Post Me!">
  </form>
 <br>
-<p>comment</p>	
-username {{username}} says: {{comment}}
+
+
+<h1>Comments</h1>
+{% for the_comment in comments %}
+	User {{the_comment.user}} says: {{the_comment.comment}} <hr>
+{% endfor %}
+
 </body>
 </html>
